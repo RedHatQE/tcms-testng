@@ -29,7 +29,7 @@ import com.redhat.qe.auto.testng.BlockedByBzBug;
 import tcms.API.Build;
 import tcms.API.Environment;
 import tcms.API.Product;
-import tcms.API.Session;
+import com.redhat.qe.xmlrpc.Session;
 import tcms.API.TestCase;
 import tcms.API.TestCaseRun;
 import tcms.API.TestPlan;
