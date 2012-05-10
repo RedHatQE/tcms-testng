@@ -24,7 +24,7 @@ import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.internal.IResultListener;
 
-import com.redhat.qe.auto.testng.BlockedByBzBug;
+import com.redhat.qe.auto.bugzilla.BlockedByBzBug;
 
 import tcms.API.Build;
 import tcms.API.Environment;
