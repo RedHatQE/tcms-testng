@@ -25,6 +25,7 @@ import org.testng.ITestResult;
 import org.testng.internal.IResultListener;
 
 import com.redhat.qe.auto.bugzilla.BlockedByBzBug;
+import com.redhat.qe.jul.AbstractTestProcedureHandler;
 
 import tcms.API.Build;
 import tcms.API.Environment;
@@ -388,12 +389,12 @@ public class TCMSTestNGListener implements IResultListener, ISuiteListener {
 		
 		// if the first time, capture & cleanup the initial login process of selenium test script
 		if (sProcedurePreText == null) {
-			sProcedurePreText = TestProcedureHandler.getActiveLog();
+			sProcedurePreText = AbstractTestProcedureHandler.getActiveLog();
 			sProcedurePreText = cleanUpLog(sProcedurePreText);
 		}	
 		
 		// resetting active log to remove messages from previous tests that were bleeding over
-		TestProcedureHandler.resetActiveLog();
+		AbstractTestProcedureHandler.resetActiveLog();
 		
 		// useful kvp when trying to document data provided tests
 		String sAppendParmOneToSummary = System.getProperty("testopia.testcase.appendParmOneToSummary");
@@ -483,7 +484,7 @@ public class TCMSTestNGListener implements IResultListener, ISuiteListener {
 	public void onTestSuccess(ITestResult result) {
 		myOverwrite = System.getProperty("testopia.testcase.overwrite");
 		//get the procedure log from the handler
-		String action= TestProcedureHandler.getActiveLog();
+		String action= AbstractTestProcedureHandler.getActiveLog();
 		action = cleanUpLog(action);
 		action = sProcedurePreText + action;
 		if (action == null)
