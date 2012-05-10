@@ -8,7 +8,7 @@ allprojects {
 }
 
 group = 'com.redhat.qe'
-version = '1.0.0'
+version = '1.0.1'
 
 sourceSets {
     main {
@@ -45,9 +45,11 @@ repositories {
 
 dependencies {
     //compile "org.apache.xmlrpc:xmlrpc-common:3.1.3",
-    compile "com.redhat.qe:tcms:1.0.0-SNAPSHOT",
+    compile "com.redhat.qe:tcms:1.0.1",
             "com.redhat.qe:extended-selenium:1.0.3",
             "com.redhat.qe:xmlrpc-client-tools:1.0.2",
+            "com.redhat.qe:logging-testscript:1.0.2",
+            "com.redhat.qe:bugzilla-testng:1.0.2",
             "org.testng:testng:6.5.1"
     deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
 }
